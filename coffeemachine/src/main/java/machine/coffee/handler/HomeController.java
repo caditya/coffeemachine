@@ -33,8 +33,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
-//@SessionAttributes("coffee");
-//@SessionAttributes("coffeecatalog")
+@SessionAttributes({"coffeecatalog","coffee"})
 public class HomeController {
 
 	@PostConstruct

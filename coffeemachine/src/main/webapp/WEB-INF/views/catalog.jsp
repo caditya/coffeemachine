@@ -6,12 +6,31 @@
 <title>Coffee Catalog</title>
 </head>
 <body>
-	<p><font color='blue' size="14">Current Coffee Catalog </font></p>
-	<p> COFFEE   QUANTITY </p>
-	
-	<c:forEach items="${coffeecatalog}" var="coffee">
-		
-		<p>${coffee.name }   ${coffee.quantity} </p>
-	</c:forEach>	
+	<p style="font: caption; color: blue; size: 12">Current Coffee
+		Catalog</p>
+
+	<table>
+		<tr>
+			<td style="font: caption;">
+				<p>Coffee Name</p>
+			</td>
+			<td style="font: caption;" align='center'>
+				<p>Quantity</p>
+			</td>
+		</tr>
+		<c:forEach items="${coffeecatalog}" var="coffee">
+			<tr>
+				<td style="font: caption;color: blue">
+					<p>${coffee.name }</p>
+				</td>
+				<td style="font: caption;color: blue">
+					<p>${coffee.quantity}</p>
+				</td>
+				 
+				
+			</tr>
+		</c:forEach>
+	</table>
+
 </body>
 </html>
