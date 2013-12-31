@@ -28,7 +28,7 @@
 			</tr>
 			<tr>
 				<td style="font: caption;">View store Coffee catalog</td>
-				<td style="font: caption;"><a href=#>jsp</a></td>
+				<td style="font: caption;"><a href='/it/viewCatalog'>jsp</a></td>
 				<td style="font: caption;"><a href=#>xml</a></td>
 				<td style="font: caption;"><a href=#>json</a></td>
 				<td style="font: caption;"><a href=#>excel</a></td>

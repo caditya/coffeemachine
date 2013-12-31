@@ -51,7 +51,7 @@ public class CoffeeMachine {
 	//}
 	
 	
-	@RequestMapping(value="/addcoffee", method=RequestMethod.POST)
+	@RequestMapping(value="/addcoffee", method={RequestMethod.GET, RequestMethod.POST})
 	public String addMyCoffee(@ModelAttribute("coffeecatalog") Object coffeecatalog,@ModelAttribute("coffeeJSON") CoffeeJSON coffeejson,BindingResult result ){
 
 			if(result.hasErrors()){
@@ -64,6 +64,22 @@ public class CoffeeMachine {
 			System.out.println("Name:" + coffeejson.getName());
 			return "catalog";
 	}
+	
+	@RequestMapping(value="/viewCatalog", method={RequestMethod.GET, RequestMethod.POST})
+	public String viewCatalog(@ModelAttribute("coffeecatalog") Object coffeecatalog,@ModelAttribute("coffeeJSON") CoffeeJSON coffeejson,BindingResult result ){
+
+			if(result.hasErrors()){
+				System.out.println("Has Errors...");
+			}
+			if(coffeecatalog!=null){
+				System.out.println("coffee-catalog is:: " + coffeecatalog);
+				
+			}
+			System.out.println("Name:" + coffeejson.getName());
+			return "catalog";
+	}
+	
+	
 	@ModelAttribute
 	public void addToCatalog(Model model, CoffeeJSON coffeejson){
 		if(model.asMap().get("coffeecatalog")==null){
