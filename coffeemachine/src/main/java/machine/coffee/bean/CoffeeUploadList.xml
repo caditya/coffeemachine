@@ -1,0 +1,14 @@
+    <coffee-list>
+        <coffee>
+            <name>coffee-01</name>
+            <quantity>100</quantity>
+        </coffee>
+        <coffee>
+            <name>coffee-01</name>
+            <quantity>100</quantity>
+        </coffee>
+        <coffee>
+            <name>coffee-01</name>
+            <quantity>100</quantity>
+        </coffee>
+    </coffee-list>

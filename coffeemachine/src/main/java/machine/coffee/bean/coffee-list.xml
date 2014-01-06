@@ -1,0 +1,16 @@
+<ns2:multiCoffeeXML xmlns:ns2="machine.coffee.bean.coffeelist1">
+    <coffee-list>
+        <coffee>
+            <name>coffee-01</name>
+            <quantity>100</quantity>
+        </coffee>
+        <coffee>
+            <name>coffee-01</name>
+            <quantity>100</quantity>
+        </coffee>
+        <coffee>
+            <name>coffee-01</name>
+            <quantity>100</quantity>
+        </coffee>
+    </coffee-list>
+</ns2:multiCoffeeXML>
