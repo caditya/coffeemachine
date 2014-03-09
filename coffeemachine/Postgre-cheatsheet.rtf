@@ -1,0 +1,69 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww25100\viewh14220\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\fs22 \cf0 \CocoaLigature0 cd /usr/local/var\
+postgres adityachaudhary$ pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start\
+\
+\
+pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start\
+\
+Adityas-MacBook-Pro:postgres adityachaudhary$ pwd\
+/usr/local/var/postgres\
+Adityas-MacBook-Pro:postgres adityachaudhary$ pg_ctl start\
+pg_ctl: no database directory specified and environment variable PGDATA unset\
+Try "pg_ctl --help" for more information.\
+Adityas-MacBook-Pro:postgres adityachaudhary$ pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start\
+server starting\
+Adityas-MacBook-Pro:postgres adityachaudhary$ createdb coffeedb\
+Adityas-MacBook-Pro:postgres adityachaudhary$ create user coffee\
+-bash: create: command not found\
+Adityas-MacBook-Pro:postgres adityachaudhary$ createuser coffee\
+Adityas-MacBook-Pro:postgres adityachaudhary$ psql coffeedb\
+psql (9.3.2)\
+Type "help" for help.\
+\
+coffeedb=# create schema coffeemachine \
+coffeedb-# ;\
+CREATE SCHEMA\
+coffeedb=# create table coffeemachine.coffee_details(name varchar(25), quantity int);\
+CREATE TABLE\
+coffeedb=# select * from coffeemachine.coffee_details;\
+ name | quantity \
+------+----------\
+(0 rows)\
+\
+coffeedb=# GRANT ALL ON SCHEMA COFFEEMACHINE TO COFFEE;\
+GRANT\
+coffeedb=# GRANT ALL ON DATABASE COFFEEDB TO COFFEE;\
+GRANT\
+coffeedb=# GRANT ALL ON TABLE COFFEEMACHINE.*  TO COFFEE;\
+ERROR:  syntax error at or near "TO"\
+LINE 1: GRANT ALL ON TABLE COFFEEMACHINE.*  TO COFFEE;\
+                                            ^\
+coffeedb=# GRANT ALL ON TABLE COFFEEMACHINE.COFFEE_DETAILS  TO COFFEE;\
+GRANT\
+coffeedb=# GRANT ALL ON COFFEEMACHINE.*  TO COFFEE;\
+ERROR:  syntax error at or near "TO"\
+LINE 1: GRANT ALL ON COFFEEMACHINE.*  TO COFFEE;\
+                                      ^\
+coffeedb=# insert into coffeemachine.coffee-details values('coffee01',100);\
+ERROR:  syntax error at or near "-"\
+LINE 1: insert into coffeemachine.coffee-details values('coffee01',1...\
+                                        ^\
+coffeedb=# insert into coffeemachine.coffee_details values('coffee01',100);\
+INSERT 0 1\
+coffeedb=# select * from coffeemachine.coffee_details;\
+   name   | quantity \
+----------+----------\
+ coffee01 |      100\
+(1 row)\
+\
+coffeedb=# insert into coffeemachine.coffee_details values('coffee02',200);\
+INSERT 0 1\
+coffeedb=# insert into coffeemachine.coffee_details values('coffee-africa',40);\
+INSERT 0 1\
+coffeedb=# \
+}
