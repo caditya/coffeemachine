@@ -20,6 +20,8 @@ public class MarshallingXmlViewResolver implements ViewResolver {
         public MarshallingXmlViewResolver(Marshaller marshaller) {
                 this.marshaller = marshaller;
         }
+        
+        public MarshallingXmlViewResolver(){}
 
         /**
          * Get the view to use.
