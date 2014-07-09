@@ -1,3 +1,45 @@
+
+POSTGRE SQL SHORT GUIDE
+___________________________________________________________________________________________________________________
+NAVIGATE TO CORRECT DIRECTORY
+cd /usr/local/var/postgres/
+
+START DATABASE
+pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start\
+
+CREATE DATABASE
+createdb coffeedb
+
+CREATE USER
+createuser coffee
+
+CREATE SCHEMA
+create schema coffeemachine
+
+GET INTO DATABASE
+psql coffeedb
+
+CREATE TABLE
+create table coffeemachine.coffee_details(name varchar(25), quantity int);
+
+DML STATEMENTS
+insert into coffeemachine.coffee_details values('coffee01',100);
+select * from coffeemachine.coffee_details;
+___________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+DELETE IT LATER
+_________________________________________________________________
+
+
 {\rtf1\ansi\ansicpg1252\cocoartf1265
 {\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
 {\colortbl;\red255\green255\blue255;}
